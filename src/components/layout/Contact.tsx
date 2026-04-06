@@ -12,14 +12,17 @@ export default function Contact() {
   }
 
   return (
-    <section id="contact" className="section-padding bg-charcoal">
+    <section id="contact" className="section-padding bg-charcoal relative">
+      {/* Subtle blue glow */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] pointer-events-none" style={{ background: 'radial-gradient(circle, rgba(26, 35, 126, 0.08) 0%, transparent 50%)' }} />
+      
       <div className="container-custom">
         <div className="max-w-2xl mx-auto">
           {/* Header */}
           <div className="text-center mb-12">
             <p className="label mb-3">GET STARTED</p>
             <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-4">
-              Request an <span className="text-bismuth">Agentic Audit</span>
+              Request an <span style={{ color: '#3d5afe' }}>Agentic Audit</span>
             </h2>
             <p className="text-bismuth-dark text-lg">
               We will run our "Scout Agent" on your top 10 prospects and send you the results for free.
@@ -36,7 +39,7 @@ export default function Contact() {
                   placeholder="Enter your top 10 prospect domains..."
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="w-full pl-12 pr-4 py-4 bg-surface border border-border-subtle rounded-lg text-bismuth placeholder-bismuth-dark focus:border-bismuth focus:outline-none transition-colors"
+                  className="w-full pl-12 pr-4 py-4 bg-surface border border-border-subtle rounded-lg text-bismuth placeholder-bismuth-dark focus:border-[#3d5afe] focus:outline-none transition-colors"
                   required
                 />
               </div>

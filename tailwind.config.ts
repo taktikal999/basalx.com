@@ -16,12 +16,16 @@ const config: Config = {
         surface: '#1a1a1a',
         'border-subtle': '#2a2a2a',
         'border-default': '#333333',
+        'accent-blue': '#1a237e',
+        'accent-blue-light': '#283593',
+        'accent-blue-subtle': '#0d1642',
       },
       fontFamily: {
         sans: ['Inter', 'Space Grotesk', 'system-ui', 'sans-serif'],
       },
       backgroundImage: {
         'grid-line': 'linear-gradient(to right, #1a1a1a 1px, transparent 1px), linear-gradient(to bottom, #1a1a1a 1px, transparent 1px)',
+        'glow-blue': 'radial-gradient(circle at center, rgba(26, 35, 126, 0.15) 0%, transparent 50%)',
       },
     },
   },

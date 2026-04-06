@@ -11,6 +11,9 @@
     --bismuth: #E0E0E0;
     --bismuth-dark: #b0b0b0;
     --surface: #1a1a1a;
+    --accent-blue: #1a237e;
+    --accent-blue-light: #283593;
+    --accent-blue-subtle: #0d1642;
   }
 
   * {
@@ -27,7 +30,7 @@
   }
 
   ::selection {
-    @apply bg-bismuth/20 text-white;
+    @apply bg-accent-blue/30 text-white;
   }
 
   ::-webkit-scrollbar {
@@ -49,6 +52,11 @@
     background-size: 60px 60px;
     background-image: linear-gradient(to right, #1a1a1a 1px, transparent 1px),
                       linear-gradient(to bottom, #1a1a1a 1px, transparent 1px);
+  }
+
+  /* Deep Blue Glow */
+  .glow-blue {
+    background: radial-gradient(circle at center, rgba(26, 35, 126, 0.12) 0%, transparent 60%);
   }
 
   /* Glass Card */
@@ -82,5 +90,10 @@
   /* Label */
   .label {
     @apply text-xs font-bold uppercase tracking-[0.2em] text-bismuth-dark;
+  }
+
+  /* Accent text */
+  .text-accent {
+    color: #3d5afe;
   }
 }

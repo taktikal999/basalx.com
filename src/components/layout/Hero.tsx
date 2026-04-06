@@ -7,6 +7,9 @@ export default function Hero() {
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Grid Overlay */}
       <div className="absolute inset-0 grid-overlay opacity-30" />
+      
+      {/* Deep Blue Glow - subtle */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] pointer-events-none" style={{ background: 'radial-gradient(circle, rgba(26, 35, 126, 0.08) 0%, transparent 60%)' }} />
 
       <div className="relative z-10 container-custom pt-20 pb-16">
         <div className="max-w-4xl mx-auto text-center">

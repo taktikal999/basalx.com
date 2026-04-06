@@ -25,13 +25,16 @@ const agents = [
 
 export default function Workflow() {
   return (
-    <section id="workflow" className="section-padding bg-charcoal">
+    <section id="workflow" className="section-padding bg-charcoal relative">
+      {/* Subtle blue glow */}
+      <div className="absolute top-0 right-0 w-[400px] h-[400px] pointer-events-none" style={{ background: 'radial-gradient(circle, rgba(26, 35, 126, 0.1) 0%, transparent 60%)' }} />
+      
       <div className="container-custom">
         {/* Header */}
         <div className="text-center mb-16">
           <p className="label mb-3">THE AGENTIC WORKFLOW</p>
           <h2 className="text-4xl md:text-5xl font-bold tracking-tight">
-            Three Agents. <span className="text-bismuth">One Goal: Growth.</span>
+            Three Agents. <span style={{ color: '#3d5afe' }}>One Goal: Growth.</span>
           </h2>
         </div>
 
@@ -40,16 +43,16 @@ export default function Workflow() {
           {agents.map((agent, index) => (
             <div 
               key={index}
-              className="group relative p-8 bg-surface border border-border-subtle hover:border-bismuth/30 transition-all duration-300"
+              className="group relative p-8 bg-surface border border-border-subtle hover:border-[#3d5afe]/30 transition-all duration-300"
             >
               {/* Number */}
-              <div className="absolute top-6 right-6 text-6xl font-bold text-bismuth/5 group-hover:text-bismuth/10 transition-colors">
+              <div className="absolute top-6 right-6 text-6xl font-bold" style={{ color: 'rgba(61, 90, 254, 0.1)' }}>
                 {String(index + 1).padStart(2, '0')}
               </div>
 
               {/* Icon */}
-              <div className="w-14 h-14 bg-matte rounded-xl flex items-center justify-center mb-6 group-hover:bg-bismuth/10 transition-colors">
-                <agent.icon className="w-7 h-7 text-bismuth" />
+              <div className="w-14 h-14 bg-matte rounded-xl flex items-center justify-center mb-6 group-hover:bg-[#1a237e]/20 transition-colors">
+                <agent.icon className="w-7 h-7" style={{ color: '#3d5afe' }} />
               </div>
 
               {/* Label */}
@@ -64,7 +67,7 @@ export default function Workflow() {
               </p>
 
               {/* Arrow */}
-              <ArrowRight className="w-5 h-5 text-bismuth/30 mt-6 group-hover:translate-x-2 group-hover:text-bismuth transition-all duration-300" />
+              <ArrowRight className="w-5 h-5 mt-6 group-hover:translate-x-2 transition-all duration-300" style={{ color: '#3d5afe', opacity: 0.5 }} />
             </div>
           ))}
         </div>
