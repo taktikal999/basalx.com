@@ -27,7 +27,7 @@ export default function Features() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
           {features.map((feature, index) => (
-            <div key={index} className="bento-card group">
+            <div key={index} className="group" style={{ backgroundColor: '#0a0a0a', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '12px', padding: '24px' }}>
               <div className="w-10 h-10 bg-surface rounded-lg flex items-center justify-center mb-4 group-hover:bg-accent-blue/10 transition-colors">
                 <feature.icon className="w-5 h-5 text-text-secondary group-hover:text-accent-blue transition-colors" />
               </div>

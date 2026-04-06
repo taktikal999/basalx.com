@@ -22,7 +22,7 @@ export default function Testimonials() {
 
         <div className="grid md:grid-cols-3 gap-6">
           {testimonials.map((t, i) => (
-            <div key={i} className="bento-card">
+            <div key={i} style={{ backgroundColor: '#0a0a0a', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '12px', padding: '32px' }}>
               <Quote className="w-8 h-8 text-text-dim mb-4" />
               <p className="text-text-secondary leading-relaxed mb-6">"{t.content}"</p>
               <div>
