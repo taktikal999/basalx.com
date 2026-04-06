@@ -64,7 +64,7 @@ export default function Navbar() {
             {/* Logo - Far Left */}
             <Link href="/" className="flex items-center z-50">
               <img 
-                src="/home/fred/basalx.com/logo.png" 
+                src="/logo.png" 
                 alt="Basalx Logo" 
                 className="h-10 w-auto object-contain"
               />
