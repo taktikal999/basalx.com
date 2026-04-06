@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -6,21 +6,11 @@
 
 @layer base {
   :root {
-    --void: #000000;
-    --void-light: #0a0a0a;
-    --surface: #111111;
-    --surface-elevated: #161616;
-    --border-subtle: #1a1a1a;
-    --border-default: #222222;
-    --border-bright: #333333;
-    --text-primary: #ffffff;
-    --text-secondary: #999999;
-    --text-muted: #666666;
-    --text-dim: #333333;
-    --accent-blue: #00d4ff;
-    --accent-orange: #ff6b35;
-    --accent-indigo: #6366f1;
-    --accent-crimson: #dc2626;
+    --charcoal: #121212;
+    --matte: #0a0a0a;
+    --bismuth: #E0E0E0;
+    --bismuth-dark: #b0b0b0;
+    --surface: #1a1a1a;
   }
 
   * {
@@ -32,13 +22,12 @@
   }
 
   body {
-    @apply bg-void text-text-primary font-sans antialiased;
-    font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
-    letter-spacing: -0.02em;
+    @apply bg-matte text-bismuth font-sans antialiased;
+    font-family: 'Inter', 'Space Grotesk', sans-serif;
   }
 
   ::selection {
-    @apply bg-accent-blue/30 text-white;
+    @apply bg-bismuth/20 text-white;
   }
 
   ::-webkit-scrollbar {
@@ -46,167 +35,52 @@
   }
 
   ::-webkit-scrollbar-track {
-    @apply bg-void;
+    @apply bg-matte;
   }
 
   ::-webkit-scrollbar-thumb {
-    @apply bg-border-default rounded-full hover:bg-text-muted transition-colors;
+    @apply bg-border-default rounded-full hover:bg-bismuth-dark transition-colors;
   }
 }
 
 @layer components {
-  /* The Grid */
-  .void-grid {
-    background-size: 40px 40px;
-    background-image: linear-gradient(to right, #111 1px, transparent 1px),
-                      linear-gradient(to bottom, #111 1px, transparent 1px);
+  /* Grid Overlay */
+  .grid-overlay {
+    background-size: 60px 60px;
+    background-image: linear-gradient(to right, #1a1a1a 1px, transparent 1px),
+                      linear-gradient(to bottom, #1a1a1a 1px, transparent 1px);
   }
 
-  /* Light Leaks */
-  .light-leak-indigo {
-    @apply fixed pointer-events-none;
-    width: 600px;
-    height: 600px;
-    top: -200px;
-    left: -200px;
-    background: radial-gradient(circle, rgba(99, 102, 241, 0.08) 0%, transparent 70%);
-    filter: blur(80px);
+  /* Glass Card */
+  .glass-card {
+    @apply bg-surface/50 backdrop-blur-sm border border-border-subtle;
   }
 
-  .light-leak-crimson {
-    @apply fixed pointer-events-none;
-    width: 500px;
-    height: 500px;
-    bottom: -150px;
-    right: -150px;
-    background: radial-gradient(circle, rgba(220, 38, 38, 0.06) 0%, transparent 70%);
-    filter: blur(80px);
+  /* Button Primary */
+  .btn-primary {
+    @apply inline-flex items-center justify-center px-8 py-4 
+           bg-bismuth text-matte font-semibold rounded-lg
+           hover:bg-white transition-all duration-300;
   }
 
-  /* Labels */
-  .label {
-    @apply text-[10px] font-bold uppercase tracking-widest text-text-muted;
-  }
-
-  /* Bento Card - Ghost Look */
-  .bento-card {
-    @apply bg-void-light border border-white/10 rounded-xl p-6 hover:border-white/20 transition-all duration-300;
-  }
-
-  .bento-card-hover {
-    @apply bg-void-light border border-white/10 rounded-xl p-6 hover:border-white/20 transition-all duration-300;
-  }
-
-  /* Glowing Border */
-  .glowing-border {
-    @apply relative rounded-xl;
-    background: linear-gradient(135deg, #333 0%, #111 50%, #333 100%);
-    padding: 1px;
-  }
-
-  .glowing-border-inner {
-    @apply bg-void rounded-[11px];
-  }
-
-  /* Glass Nav */
-  .glass-nav {
-    @apply h-14 bg-void/80 backdrop-blur-md border-b border-border-default;
-  }
-
-  /* Primary CTA - Pill */
-  .btn-pill {
-    @apply inline-flex items-center justify-center px-6 py-2.5 
-           bg-text-primary text-void font-medium rounded-full
-           shadow-glow-white hover:shadow-[0_0_30px_rgba(255,255,255,0.25)]
-           transition-all duration-300 active:scale-95;
-  }
-
-  .btn-pill-accent {
-    @apply inline-flex items-center justify-center px-6 py-2.5 
-           bg-accent-blue text-void font-medium rounded-full
-           shadow-glow-blue hover:shadow-[0_0_40px_rgba(0,212,255,0.4)]
-           transition-all duration-300 active:scale-95;
-  }
-
-  /* Secondary */
+  /* Button Secondary */
   .btn-secondary {
-    @apply inline-flex items-center justify-center px-6 py-2.5 
-           bg-transparent border border-border-bright text-text-primary font-medium rounded-full
-           hover:border-text-primary hover:bg-surface
-           transition-all duration-300 active:scale-95;
+    @apply inline-flex items-center justify-center px-8 py-4 
+           bg-transparent border border-bismuth/30 text-bismuth font-medium rounded-lg
+           hover:border-bismuth hover:bg-bismuth/5 transition-all duration-300;
   }
 
-  /* Mega Menu */
-  .mega-menu {
-    @apply fixed left-0 right-0 top-14 bg-void border-b border-border-default;
-    animation: slideDown 0.3s cubic-bezier(0.33, 1, 0.68, 1);
+  /* Section Padding */
+  .section-padding {
+    @apply py-24 md:py-32 px-4 md:px-8;
   }
 
-  @keyframes slideDown {
-    from {
-      opacity: 0;
-      transform: translateY(-10px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
+  .container-custom {
+    @apply max-w-7xl mx-auto;
   }
 
-  /* Bento Grid */
-  .bento-grid {
-    @apply grid grid-cols-1 md:grid-cols-2 gap-4;
-  }
-
-  .bento-card {
-    @apply bg-surface border border-border-subtle rounded-xl p-6 hover:border-border-bright transition-colors duration-300;
-  }
-
-  .bento-large {
-    @apply md:col-span-2;
-  }
-
-  /* Metadata Strings */
-  .metadata {
-    @apply text-[8px] font-mono text-text-dim;
-  }
-
-  /* Hero Frame */
-  .stargate-frame {
-    @apply relative rounded-xl border border-border-bright overflow-hidden;
-    background: linear-gradient(135deg, #1a1a1a 0%, #0d0d0d 50%, #1a1a1a 100%);
-  }
-
-  .stargate-frame::before {
-    content: '';
-    @apply absolute inset-0 rounded-xl;
-    background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, transparent 50%, rgba(255,255,255,0.05) 100%);
-    pointer-events: none;
-  }
-}
-
-@layer utilities {
-  .text-heading {
-    @apply font-semibold tracking-tight;
-    letter-spacing: -0.05em;
-  }
-
-  .text-balance {
-    text-wrap: balance;
-  }
-
-  .animate-fade-up {
-    animation: fadeUp 0.6s ease-out forwards;
-  }
-
-  @keyframes fadeUp {
-    from {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
+  /* Label */
+  .label {
+    @apply text-xs font-bold uppercase tracking-[0.2em] text-bismuth-dark;
   }
 }

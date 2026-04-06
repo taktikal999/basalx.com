@@ -1,0 +1,58 @@
+'use client'
+
+import { ArrowRight, Search, Send } from 'lucide-react'
+import { useState } from 'react'
+
+export default function Contact() {
+  const [email, setEmail] = useState('')
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault()
+    alert('Thanks! We\'ll run our Scout Agent on your prospects and be in touch.')
+  }
+
+  return (
+    <section id="contact" className="section-padding bg-charcoal">
+      <div className="container-custom">
+        <div className="max-w-2xl mx-auto">
+          {/* Header */}
+          <div className="text-center mb-12">
+            <p className="label mb-3">GET STARTED</p>
+            <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-4">
+              Request an <span className="text-bismuth">Agentic Audit</span>
+            </h2>
+            <p className="text-bismuth-dark text-lg">
+              We will run our "Scout Agent" on your top 10 prospects and send you the results for free.
+            </p>
+          </div>
+
+          {/* Form */}
+          <form onSubmit={handleSubmit} className="space-y-4">
+            <div className="flex flex-col md:flex-row gap-4">
+              <div className="flex-1 relative">
+                <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-bismuth-dark" />
+                <input
+                  type="email"
+                  placeholder="Enter your top 10 prospect domains..."
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  className="w-full pl-12 pr-4 py-4 bg-surface border border-border-subtle rounded-lg text-bismuth placeholder-bismuth-dark focus:border-bismuth focus:outline-none transition-colors"
+                  required
+                />
+              </div>
+              <button type="submit" className="btn-primary whitespace-nowrap">
+                Run Free Audit
+                <Send className="w-4 h-4 ml-2" />
+              </button>
+            </div>
+          </form>
+
+          {/* Trust indicator */}
+          <p className="text-center text-xs text-bismuth-dark mt-6">
+            No credit card required. No sales calls. Just data.
+          </p>
+        </div>
+      </div>
+    </section>
+  )
+}
