@@ -2,8 +2,8 @@ import type { Metadata } from 'next'
 import './globals.css'
 import Navbar from '@/components/layout/Navbar'
 import Hero from '@/components/layout/Hero'
-import Workflow from '@/components/layout/Workflow'
-import SocialProof from '@/components/layout/SocialProof'
+import Capabilities from '@/components/layout/Capabilities'
+import Trust from '@/components/layout/Trust'
 import Contact from '@/components/layout/Contact'
 import Footer from '@/components/layout/Footer'
 
@@ -14,11 +14,11 @@ export const metadata: Metadata = {
 
 export default function HomePage() {
   return (
-    <div className="min-h-screen bg-matte">
+    <div className="min-h-screen bg-jet">
       <Navbar />
       <Hero />
-      <Workflow />
-      <SocialProof />
+      <Capabilities />
+      <Trust />
       <Contact />
       <Footer />
     </div>

@@ -9,26 +9,30 @@ export default function Navbar() {
 
   return (
     <>
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-matte/90 backdrop-blur-md border-b border-border-subtle">
+      <nav className="glass-nav fixed top-0 left-0 right-0 z-50 h-16">
         <div className="container-custom">
-          <div className="flex items-center justify-between h-20 px-4 md:px-0">
-            {/* Logo - larger */}
+          <div className="flex items-center justify-between h-16">
+            {/* Logo - 32px height */}
             <Link href="/" className="flex items-center">
               <img 
                 src="/newlogo.svg" 
                 alt="BasalX" 
-                className="h-12 w-auto"
-                style={{ display: 'block', maxWidth: 'none' }}
+                className="h-8 w-auto"
+                style={{ display: 'block' }}
               />
             </Link>
 
             {/* Desktop Nav */}
             <div className="hidden md:flex items-center space-x-8">
-              <Link href="#workflow" className="text-sm text-bismuth-dark hover:text-bismuth transition-colors">How it Works</Link>
-              <Link href="#trust" className="text-sm text-bismuth-dark hover:text-bismuth transition-colors">About</Link>
-              <Link href="#contact" className="btn-primary text-sm group">
-                Deploy Your Pod
-                <ChevronRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
+              <Link href="#services" className="text-sm text-bismuth-dark hover:text-bismuth transition-colors">
+                Services
+              </Link>
+              <Link href="#case-studies" className="text-sm text-bismuth-dark hover:text-bismuth transition-colors">
+                Case Studies
+              </Link>
+              <Link href="#contact" className="btn-primary text-sm">
+                Deploy Pod
+                <ChevronRight className="w-4 h-4 ml-1" />
               </Link>
             </div>
 
@@ -41,14 +45,14 @@ export default function Navbar() {
 
         {/* Mobile Menu */}
         {isOpen && (
-          <div className="md:hidden border-t border-border-subtle p-4 space-y-4 bg-matte">
-            <Link href="#workflow" className="block text-bismuth-dark hover:text-bismuth py-2" onClick={() => setIsOpen(false)}>How it Works</Link>
-            <Link href="#trust" className="block text-bismuth-dark hover:text-bismuth py-2" onClick={() => setIsOpen(false)}>About</Link>
-            <Link href="#contact" className="btn-primary text-center block" onClick={() => setIsOpen(false)}>Deploy Your Pod</Link>
+          <div className="md:hidden border-t border-border-subtle p-4 space-y-4 bg-charcoal">
+            <Link href="#services" className="block text-bismuth-dark hover:text-bismuth py-2" onClick={() => setIsOpen(false)}>Services</Link>
+            <Link href="#case-studies" className="block text-bismuth-dark hover:text-bismuth py-2" onClick={() => setIsOpen(false)}>Case Studies</Link>
+            <Link href="#contact" className="btn-primary text-center block" onClick={() => setIsOpen(false)}>Deploy Pod</Link>
           </div>
         )}
       </nav>
-      <div className="h-20" />
+      <div className="h-16" />
     </>
   )
 }

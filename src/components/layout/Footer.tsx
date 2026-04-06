@@ -9,27 +9,25 @@ export default function Footer() {
     <footer className="border-t border-border-subtle">
       <div className="container-custom py-12">
         <div className="flex flex-col md:flex-row justify-between items-center gap-6">
-          {/* Logo & Copyright */}
-          <div className="flex items-center gap-4">
+          {/* Logo */}
+          <Link href="/" className="flex items-center">
             <img 
               src="/newlogo.svg" 
               alt="BasalX" 
-              className="h-10 w-auto"
-              style={{ display: 'block', maxWidth: 'none' }} 
+              className="h-6 w-auto"
+              style={{ display: 'block' }} 
             />
-            <span className="text-bismuth-dark text-sm">© {currentYear} BasalX</span>
-          </div>
+          </Link>
 
           {/* Tagline */}
           <p className="text-bismuth-dark text-sm">
-            Infrastructure for the Agentic Era
+            © {currentYear} BasalX. Built for the Agentic Era.
           </p>
 
           {/* Links */}
           <div className="flex items-center gap-6">
             <Link href="/privacy" className="text-bismuth-dark text-sm hover:text-bismuth transition-colors">Privacy</Link>
             <Link href="/terms" className="text-bismuth-dark text-sm hover:text-bismuth transition-colors">Terms</Link>
-            <Link href="/contact" className="text-bismuth-dark text-sm hover:text-bismuth transition-colors">Contact</Link>
           </div>
         </div>
       </div>
