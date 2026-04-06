@@ -10,6 +10,11 @@ export default function Hero() {
 
       <div className="relative z-10 container-custom pt-20 pb-16">
         <div className="max-w-4xl mx-auto text-center">
+          {/* Logo Mark */}
+          <div className="flex justify-center mb-8">
+            <img src="/newlogo.svg" alt="BasalX" className="h-12 w-auto" />
+          </div>
+
           {/* Badge */}
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-surface border border-border-subtle mb-8">
             <Zap className="w-4 h-4 text-bismuth" />
