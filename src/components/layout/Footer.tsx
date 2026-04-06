@@ -1,64 +1,55 @@
 'use client'
 
 import Link from 'next/link'
-import { Cpu, Github, Twitter, Linkedin } from 'lucide-react'
+import { Github, Twitter, Linkedin } from 'lucide-react'
 
 const footerLinks = {
-  Product: ['Features', 'Pricing', 'Documentation', 'Changelog'],
-  Company: ['About', 'Blog', 'Careers', 'Press'],
+  Research: ['Papers', 'Basal-X v2.4', 'API Reference', 'Research Blog'],
+  Company: ['About', 'Careers', 'Press', 'Partners'],
   Legal: ['Privacy', 'Terms', 'Security', 'Cookies'],
 }
-
-const socialLinks = [
-  { icon: Github, href: 'https://github.com', label: 'GitHub' },
-  { icon: Twitter, href: 'https://twitter.com', label: 'Twitter' },
-  { icon: Linkedin, href: 'https://linkedin.com', label: 'LinkedIn' },
-]
 
 export default function Footer() {
   const currentYear = new Date().getFullYear()
 
   return (
-    <footer className="border-t border-border-subtle">
-      <div className="container-custom py-16">
-        <div className="grid grid-cols-2 md:grid-cols-5 gap-8 md:gap-12">
+    <footer className="border-t border-border-default">
+      <div className="max-w-7xl mx-auto px-4 md:px-8 py-16">
+        <div className="grid grid-cols-2 md:grid-cols-5 gap-8">
           {/* Brand */}
-          <div className="col-span-2 md:col-span-1">
+          <div className="col-span-2">
             <Link href="/" className="flex items-center space-x-3 mb-4">
-              <div className="w-9 h-9 bg-gradient-to-br from-accent to-accent-secondary rounded-lg flex items-center justify-center">
-                <Cpu className="w-5 h-5 text-black" />
+              <div className="w-8 h-8 bg-gradient-to-br from-accent-blue to-accent-orange rounded-lg flex items-center justify-center">
+                <span className="text-void font-bold text-sm">B</span>
               </div>
-              <span className="text-xl font-semibold">Basal</span>
+              <span className="text-lg font-semibold">Basal</span>
             </Link>
-            <p className="text-muted-foreground text-sm mb-6">
-              The foundation for next-generation applications.
+            <p className="text-sm text-text-muted mb-6 max-w-xs">
+              Building the foundation for next-generation AI systems.
             </p>
             <div className="flex items-center gap-4">
-              {socialLinks.map((social) => (
-                <a
-                  key={social.label}
-                  href={social.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-muted-foreground hover:text-foreground transition-colors"
-                  aria-label={social.label}
-                >
-                  <social.icon className="w-5 h-5" />
-                </a>
-              ))}
+              <a href="https://github.com" className="text-text-muted hover:text-text-primary transition-colors">
+                <Github className="w-5 h-5" />
+              </a>
+              <a href="https://twitter.com" className="text-text-muted hover:text-text-primary transition-colors">
+                <Twitter className="w-5 h-5" />
+              </a>
+              <a href="https://linkedin.com" className="text-text-muted hover:text-text-primary transition-colors">
+                <Linkedin className="w-5 h-5" />
+              </a>
             </div>
           </div>
 
           {/* Links */}
           {Object.entries(footerLinks).map(([title, links]) => (
             <div key={title}>
-              <h3 className="font-medium mb-4">{title}</h3>
+              <h3 className="label mb-4">{title}</h3>
               <ul className="space-y-3">
                 {links.map((link) => (
                   <li key={link}>
                     <Link
-                      href={`/${link.toLowerCase()}`}
-                      className="text-muted-foreground hover:text-foreground text-sm transition-colors"
+                      href={`/${link.toLowerCase().replace(/\s+/g, '-').replace('.', '')}`}
+                      className="text-sm text-text-muted hover:text-text-primary transition-colors"
                     >
                       {link}
                     </Link>
@@ -70,12 +61,13 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-border-subtle mt-12 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-muted-foreground text-sm">
+          <p className="text-sm text-text-dim">
             &copy; {currentYear} Basal. All rights reserved.
           </p>
-          <p className="text-muted-foreground text-sm">
-            Built with precision in San Francisco.
-          </p>
+          <div className="flex items-center gap-4 text-xs text-text-dim">
+            <span>COORD: 34.05 / -118.24</span>
+            <span>SERVER: US-WEST-1</span>
+          </div>
         </div>
       </div>
     </footer>

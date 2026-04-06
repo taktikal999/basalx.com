@@ -4,9 +4,9 @@ import Navbar from '@/components/layout/Navbar'
 import Footer from '@/components/layout/Footer'
 
 export const metadata: Metadata = {
-  title: 'Basal — Intelligent Infrastructure for the Future',
-  description: 'AI-powered tools and infrastructure primitives for next-generation applications. Build faster, scale globally, deploy instantly.',
-  keywords: ['infrastructure', 'AI', 'developer tools', 'cloud', 'edge computing', 'serverless'],
+  title: 'Basal — Foundational Intelligence for the Next Era',
+  description: 'AI infrastructure for next-generation applications. Build faster, scale globally, deploy instantly.',
+  keywords: ['AI', 'infrastructure', 'machine learning', 'edge computing', 'developer tools'],
 }
 
 export default function RootLayout({
@@ -16,7 +16,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="min-h-screen flex flex-col bg-background text-foreground">
+      <body className="min-h-screen flex flex-col bg-void text-text-primary">
         <Navbar />
         <main className="flex-grow">
           {children}
