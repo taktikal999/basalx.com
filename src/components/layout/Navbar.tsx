@@ -42,13 +42,14 @@ export default function Navbar() {
     <>
       <nav className="glass-nav fixed top-0 left-0 right-0 z-50">
         <div className="max-w-7xl mx-auto px-4 md:px-8">
-          <div className="flex items-center justify-between h-14">
-            {/* Logo - Far Left */}
+          <div className="flex items-center justify-between h-16">
+            {/* Logo - Far Left - Absolute Path */}
             <Link href="/" className="flex items-center">
               <img 
-                src="/logo.png" 
+                src="/home/fred/basalx.com/logo.png" 
                 alt="Basal" 
-                className="h-10 w-auto object-contain"
+                className="h-12 w-auto object-contain"
+                style={{ background: 'transparent' }}
               />
             </Link>
 
@@ -61,23 +62,23 @@ export default function Navbar() {
                   onMouseEnter={() => setActiveMenu(label)}
                   onMouseLeave={() => setActiveMenu(null)}
                 >
-                  <button className="flex items-center space-x-1 px-4 py-2 text-sm text-text-secondary hover:text-text-primary transition-colors">
+                  <button className="flex items-center space-x-1 px-4 py-2 text-sm text-white/80 hover:text-white hover:opacity-100 transition-all duration-200">
                     <span>{label}</span>
                     <ChevronDown className="w-3 h-3" />
                   </button>
                 </div>
               ))}
-              <Link href="/about" className="px-4 py-2 text-sm text-text-secondary hover:text-text-primary transition-colors">
+              <Link href="/about" className="px-4 py-2 text-sm text-white/80 hover:text-white hover:opacity-100 transition-all duration-200">
                 About
               </Link>
-              <Link href="/pricing" className="px-4 py-2 text-sm text-text-secondary hover:text-text-primary transition-colors">
+              <Link href="/pricing" className="px-4 py-2 text-sm text-white/80 hover:text-white hover:opacity-100 transition-all duration-200">
                 Pricing
               </Link>
             </div>
 
             {/* Right Actions */}
             <div className="flex items-center space-x-3">
-              <Link href="/login" className="hidden md:block text-sm text-text-secondary hover:text-text-primary transition-colors">
+              <Link href="/login" className="hidden md:block text-sm text-white/80 hover:text-white hover:opacity-100 transition-all duration-200">
                 Log in
               </Link>
               <Link href="/contact" className="btn-pill-accent text-sm">
@@ -88,10 +89,11 @@ export default function Navbar() {
         </div>
       </nav>
 
-      {/* Mega Menu Overlay */}
+      {/* Mega Menu Overlay - Deep Black */}
       {activeMenu && (
         <div
           className="mega-menu"
+          style={{ backgroundColor: '#000000' }}
           onMouseEnter={() => setActiveMenu(activeMenu)}
           onMouseLeave={() => setActiveMenu(null)}
         >
@@ -103,25 +105,25 @@ export default function Navbar() {
                   <Link
                     key={i}
                     href={`/${item.title.toLowerCase().replace(/\s+/g, '-')}`}
-                    className="group p-4 -mx-4 rounded-lg hover:bg-surface transition-colors"
+                    className="group p-4 -mx-4 rounded-lg hover:bg-[#111111] transition-colors"
                   >
-                    <h3 className="text-lg font-semibold text-text-primary mb-1 group-hover:text-accent-blue transition-colors">
+                    <h3 className="text-lg font-semibold text-white mb-1 group-hover:text-[#00d4ff] transition-colors">
                       {item.title}
                     </h3>
-                    <p className="text-sm text-text-muted">{item.description}</p>
+                    <p className="text-sm text-[#666666]">{item.description}</p>
                   </Link>
                 ))}
               </div>
 
               {/* Right Column - Secondary Links */}
-              <div className="col-span-5 border-l border-border-subtle pl-8">
+              <div className="col-span-5 border-l border-[#1a1a1a] pl-8">
                 <p className="label mb-4">Resources</p>
                 <div className="grid grid-cols-2 gap-3">
                   {megaMenuData[activeMenu as keyof typeof megaMenuData].secondary.map((item, i) => (
                     <Link
                       key={i}
                       href={item.href}
-                      className="flex items-center justify-between text-sm text-text-secondary hover:text-text-primary py-2 border-b border-border-subtle hover:border-border-bright transition-colors"
+                      className="flex items-center justify-between text-sm text-white/60 hover:text-white py-2 border-b border-[#1a1a1a] hover:border-[#333333] transition-colors"
                     >
                       <span>{item.title}</span>
                       <ArrowRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
@@ -135,7 +137,7 @@ export default function Navbar() {
       )}
 
       {/* Spacer for fixed nav */}
-      <div className="h-14" />
+      <div className="h-16" />
     </>
   )
 }
