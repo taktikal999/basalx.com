@@ -7,7 +7,7 @@ export default function SocialProof() {
     <section id="trust" className="section-padding">
       <div className="container-custom">
         <div className="max-w-3xl mx-auto text-center">
-          <img src="/newlogo.svg" alt="BasalX" className="h-8 w-auto mx-auto mb-8 opacity-50" />
+          <img src="/newlogo.svg" alt="BasalX" className="h-10 w-auto mx-auto mb-8 opacity-50" style={{ display: 'block', maxWidth: 'none' }} />
           <Quote className="w-12 h-12 text-bismuth/30 mx-auto mb-8" />
           <p className="text-2xl md:text-3xl font-medium leading-relaxed mb-8">
             "BasalX is built on the philosophy that the best AI feels human. 

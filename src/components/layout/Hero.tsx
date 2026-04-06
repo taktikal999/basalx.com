@@ -15,7 +15,7 @@ export default function Hero() {
         <div className="max-w-4xl mx-auto text-center">
           {/* Logo Mark */}
           <div className="flex justify-center mb-8">
-            <img src="/newlogo.svg" alt="BasalX" className="h-12 w-auto" />
+            <img src="/newlogo.svg" alt="BasalX" className="h-16 w-auto" style={{ display: 'block', maxWidth: 'none' }} />
           </div>
 
           {/* Badge */}
