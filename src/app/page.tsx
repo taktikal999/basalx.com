@@ -6,10 +6,10 @@ import CTA from '@/components/layout/CTA'
 
 export default function HomePage() {
   return (
-    <div className="space-y-0">
+    <div>
       <Hero />
-      <Features />
       <Stats />
+      <Features />
       <Testimonials />
       <CTA />
     </div>

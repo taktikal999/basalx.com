@@ -2,28 +2,27 @@
 
 import Link from 'next/link'
 import { useState } from 'react'
-import { Menu, X, Cpu, ChevronRight } from 'lucide-react'
+import { Menu, X, Cpu, ArrowRight } from 'lucide-react'
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   const navItems = [
-    { label: 'Home', href: '/' },
-    { label: 'Products', href: '/products' },
+    { label: 'Product', href: '/products' },
     { label: 'Solutions', href: '/solutions' },
     { label: 'Company', href: '/about' },
-    { label: 'Contact', href: '/contact' },
+    { label: 'Pricing', href: '/pricing' },
   ]
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 glass">
-      <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-20">
+      <div className="container-custom">
+        <div className="flex items-center justify-between h-16 md:h-20">
           <Link href="/" className="flex items-center space-x-3 group">
-            <div className="w-10 h-10 bg-gradient-to-br from-primary to-secondary rounded-xl flex items-center justify-center transform group-hover:scale-110 transition-transform">
-              <Cpu className="w-5 h-5 text-white" />
+            <div className="w-9 h-9 bg-gradient-to-br from-accent to-accent-secondary rounded-lg flex items-center justify-center">
+              <Cpu className="w-5 h-5 text-black" />
             </div>
-            <span className="text-2xl font-bold gradient-text">BasalX</span>
+            <span className="text-xl font-semibold tracking-tight">Basal</span>
           </Link>
 
           <div className="hidden md:flex items-center space-x-8">
@@ -31,18 +30,18 @@ export default function Navbar() {
               <Link
                 key={item.label}
                 href={item.href}
-                className="text-gray-300 hover:text-primary transition-all duration-300 relative group"
+                className="nav-link"
               >
                 {item.label}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full" />
               </Link>
             ))}
+            
             <Link
               href="/contact"
-              className="btn-primary flex items-center space-x-2"
+              className="btn-primary text-sm"
             >
               <span>Get Started</span>
-              <ChevronRight className="w-4 h-4" />
+              <ArrowRight className="w-4 h-4 ml-2" />
             </Link>
           </div>
 
@@ -51,21 +50,21 @@ export default function Navbar() {
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
             {isMenuOpen ? (
-              <X className="w-6 h-6 text-white" />
+              <X className="w-5 h-5" />
             ) : (
-              <Menu className="w-6 h-6 text-white" />
+              <Menu className="w-5 h-5" />
             )}
           </button>
         </div>
-
+        
         {isMenuOpen && (
-          <div className="md:hidden pb-6 border-t border-dark-500">
+          <div className="md:hidden pb-6 border-t border-border-subtle">
             <div className="flex flex-col space-y-4 pt-4">
               {navItems.map((item) => (
                 <Link
                   key={item.label}
                   href={item.href}
-                  className="text-gray-300 hover:text-primary transition-colors py-2"
+                  className="text-muted-foreground hover:text-foreground py-2"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {item.label}
