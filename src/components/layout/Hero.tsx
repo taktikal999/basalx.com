@@ -1,6 +1,8 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import Link from 'next/link'
+import { ChevronRight } from 'lucide-react'
 
 const agentLogs = [
   { time: '14:02:01', agent: 'SCOUT_AGENT', message: 'Signal detected - Vantage Corp hiring VP Sales' },
