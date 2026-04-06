@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import { useState } from 'react'
-import { Cpu, ChevronDown, Play, FileText, ArrowRight } from 'lucide-react'
+import { ChevronDown, Play, FileText, ArrowRight } from 'lucide-react'
 
 const megaMenuData = {
   Research: {
@@ -43,12 +43,13 @@ export default function Navbar() {
       <nav className="glass-nav fixed top-0 left-0 right-0 z-50">
         <div className="max-w-7xl mx-auto px-4 md:px-8">
           <div className="flex items-center justify-between h-14">
-            {/* Logo */}
-            <Link href="/" className="flex items-center space-x-3">
-              <div className="w-8 h-8 bg-gradient-to-br from-accent-blue to-accent-orange rounded-lg flex items-center justify-center">
-                <Cpu className="w-4 h-4 text-void" />
-              </div>
-              <span className="text-lg font-semibold tracking-tight">Basal</span>
+            {/* Logo - Far Left */}
+            <Link href="/" className="flex items-center">
+              <img 
+                src="/logo.png" 
+                alt="Basal" 
+                className="h-10 w-auto object-contain"
+              />
             </Link>
 
             {/* Center Nav */}

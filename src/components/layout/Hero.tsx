@@ -1,8 +1,6 @@
 'use client'
 
-import { Play, FileText, ArrowRight, Globe, Cpu, Zap, Lock, Database, Cloud } from 'lucide-react'
-
-const particleCount = 60
+import { Play, FileText, ArrowRight, Zap, Lock, Cpu, Cloud } from 'lucide-react'
 
 export default function Hero() {
   return (
@@ -24,14 +22,14 @@ export default function Hero() {
 
         {/* Stargate Frame */}
         <div className="stargate-frame aspect-[16/9] max-h-[600px]">
-          {/* Particle Visual */}
+          {/* Particle Visual - Blue/Red Gradient */}
           <div className="absolute inset-0 overflow-hidden">
-            {/* Blue Particles */}
+            {/* Blue Particles - #00d4ff */}
             <div className="absolute inset-0">
               {[...Array(30)].map((_, i) => (
                 <div
                   key={`blue-${i}`}
-                  className="absolute w-1 h-1 bg-accent-blue rounded-full"
+                  className="absolute w-1 h-1 bg-[#00d4ff] rounded-full"
                   style={{
                     left: `${Math.random() * 100}%`,
                     top: `${Math.random() * 100}%`,
@@ -44,17 +42,17 @@ export default function Hero() {
               ))}
             </div>
 
-            {/* Orange Particles */}
+            {/* Red/Crimson Particles - Match Logo Red */}
             <div className="absolute inset-0">
               {[...Array(20)].map((_, i) => (
                 <div
-                  key={`orange-${i}`}
-                  className="absolute w-1.5 h-1.5 bg-accent-orange rounded-full"
+                  key={`red-${i}`}
+                  className="absolute w-1.5 h-1.5 bg-[#ff3333] rounded-full"
                   style={{
                     left: `${Math.random() * 100}%`,
                     top: `${Math.random() * 100}%`,
                     opacity: Math.random() * 0.7 + 0.3,
-                    boxShadow: `0 0 ${Math.random() * 12 + 6}px rgba(255, 107, 53, 0.8)`,
+                    boxShadow: `0 0 ${Math.random() * 12 + 6}px rgba(255, 51, 51, 0.8)`,
                     animation: `float ${Math.random() * 12 + 12}s linear infinite`,
                     animationDelay: `${Math.random() * -24}s`,
                   }}
@@ -62,9 +60,9 @@ export default function Hero() {
               ))}
             </div>
 
-            {/* Central Glow */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-accent-blue/20 rounded-full blur-[80px]" />
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-40 h-40 bg-accent-orange/30 rounded-full blur-[60px]" />
+            {/* Central Glow - Blue/Red Blend */}
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-[#00d4ff]/20 rounded-full blur-[80px]" />
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-40 h-40 bg-[#ff3333]/30 rounded-full blur-[60px]" />
           </div>
 
           {/* Typography Overlay */}
@@ -93,19 +91,19 @@ export default function Hero() {
         {/* Feature Pills */}
         <div className="flex flex-wrap justify-center gap-3 mt-12">
           <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-surface/50 border border-border-subtle">
-            <Zap className="w-4 h-4 text-accent-blue" />
+            <Zap className="w-4 h-4 text-[#00d4ff]" />
             <span className="text-sm text-text-secondary">Sub-millisecond latency</span>
           </div>
           <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-surface/50 border border-border-subtle">
-            <Lock className="w-4 h-4 text-accent-blue" />
+            <Lock className="w-4 h-4 text-[#00d4ff]" />
             <span className="text-sm text-text-secondary">Zero-trust security</span>
           </div>
           <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-surface/50 border border-border-subtle">
-            <Cpu className="w-4 h-4 text-accent-blue" />
+            <Cpu className="w-4 h-4 text-[#00d4ff]" />
             <span className="text-sm text-text-secondary">Native AI inference</span>
           </div>
           <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-surface/50 border border-border-subtle">
-            <Cloud className="w-4 h-4 text-accent-blue" />
+            <Cloud className="w-4 h-4 text-[#00d4ff]" />
             <span className="text-sm text-text-secondary">300+ edge locations</span>
           </div>
         </div>
