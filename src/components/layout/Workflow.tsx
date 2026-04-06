@@ -32,8 +32,8 @@ export default function Workflow() {
       <div className="container-custom">
         {/* Header */}
         <div className="text-center mb-16">
-          <p className="label mb-3">THE AGENTIC WORKFLOW</p>
-          <h2 className="text-4xl md:text-5xl font-bold tracking-tight">
+          <p className="label mb-3 animate-fade-up opacity-0 stagger-1">THE AGENTIC WORKFLOW</p>
+          <h2 className="text-4xl md:text-5xl font-bold tracking-tight animate-fade-up opacity-0 stagger-2">
             Three Agents. <span style={{ color: '#3d5afe' }}>One Goal: Growth.</span>
           </h2>
         </div>
@@ -43,7 +43,8 @@ export default function Workflow() {
           {agents.map((agent, index) => (
             <div 
               key={index}
-              className="group relative p-8 bg-surface border border-border-subtle hover:border-[#3d5afe]/30 transition-all duration-300"
+              className="group relative p-8 bg-surface border border-border-subtle hover:border-[#3d5afe]/30 transition-all duration-500 hover:translate-y-[-4px]"
+              style={{ animationDelay: `${0.3 + index * 0.15}s` }}
             >
               {/* Number */}
               <div className="absolute top-6 right-6 text-6xl font-bold" style={{ color: 'rgba(61, 90, 254, 0.1)' }}>
@@ -51,7 +52,7 @@ export default function Workflow() {
               </div>
 
               {/* Icon */}
-              <div className="w-14 h-14 bg-matte rounded-xl flex items-center justify-center mb-6 group-hover:bg-[#1a237e]/20 transition-colors">
+              <div className="w-14 h-14 bg-matte rounded-xl flex items-center justify-center mb-6 group-hover:bg-[#1a237e]/20 transition-all duration-300">
                 <agent.icon className="w-7 h-7" style={{ color: '#3d5afe' }} />
               </div>
 
@@ -59,15 +60,15 @@ export default function Workflow() {
               <p className="label mb-2">{agent.capability}</p>
 
               {/* Title */}
-              <h3 className="text-2xl font-semibold mb-3">{agent.title}</h3>
+              <h3 className="text-2xl font-semibold mb-3 group-hover:text-white transition-colors">{agent.title}</h3>
 
               {/* Description */}
-              <p className="text-bismuth-dark leading-relaxed">
+              <p className="text-bismuth-dark leading-relaxed group-hover:text-bismuth transition-colors">
                 {agent.description}
               </p>
 
               {/* Arrow */}
-              <ArrowRight className="w-5 h-5 mt-6 group-hover:translate-x-2 transition-all duration-300" style={{ color: '#3d5afe', opacity: 0.5 }} />
+              <ArrowRight className="w-5 h-5 mt-6 group-hover:translate-x-2 group-hover:text-[#3d5afe] transition-all duration-300" style={{ color: '#3d5afe', opacity: 0.5 }} />
             </div>
           ))}
         </div>

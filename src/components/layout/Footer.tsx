@@ -11,7 +11,12 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row justify-between items-center gap-6">
           {/* Logo & Copyright */}
           <div className="flex items-center gap-4">
-            <img src="/newlogo.svg" alt="BasalX" className="h-8 w-auto" style={{ display: 'block', maxWidth: 'none' }} />
+            <img 
+              src="/newlogo.svg" 
+              alt="BasalX" 
+              className="h-10 w-auto"
+              style={{ display: 'block', maxWidth: 'none' }} 
+            />
             <span className="text-bismuth-dark text-sm">© {currentYear} BasalX</span>
           </div>
 
