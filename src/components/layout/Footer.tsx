@@ -6,7 +6,13 @@ export default function Footer() {
   const currentYear = new Date().getFullYear()
 
   return (
-    <footer className="border-t border-border-subtle">
+    <footer className="border-t border-border-subtle relative">
+      {/* Subtle green glow at top */}
+      <div 
+        className="absolute top-0 left-1/2 -translate-x-1/2 w-[300px] h-[1px] pointer-events-none"
+        style={{ background: 'linear-gradient(90deg, transparent, rgba(0, 255, 65, 0.3), transparent)' }}
+      />
+      
       <div className="container-custom py-12">
         <div className="flex flex-col md:flex-row justify-between items-center gap-6">
           {/* Logo */}

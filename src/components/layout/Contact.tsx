@@ -35,8 +35,14 @@ export default function Contact() {
   }
 
   return (
-    <section id="contact" className="section-padding bg-charcoal">
-      <div className="container-custom">
+    <section id="contact" className="section-padding bg-charcoal relative">
+      {/* Green glow */}
+      <div 
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] pointer-events-none" 
+        style={{ background: 'radial-gradient(circle, rgba(0, 255, 65, 0.05) 0%, transparent 50%)' }} 
+      />
+      
+      <div className="container-custom relative z-10">
         <div className="max-w-lg mx-auto">
           {/* Header */}
           <div className="text-center mb-12">
@@ -47,7 +53,7 @@ export default function Contact() {
             </h2>
           </div>
 
-          {/* Form */}
+          {/* Form with subtle border glow on focus */}
           <form onSubmit={handleSubmit} className="space-y-6">
             {/* Deal Size */}
             <div>

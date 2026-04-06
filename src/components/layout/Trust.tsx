@@ -27,8 +27,14 @@ const complianceItems = [
 
 export default function Trust() {
   return (
-    <section className="section-padding bg-jet">
-      <div className="container-custom">
+    <section className="section-padding bg-jet relative">
+      {/* Subtle glow */}
+      <div 
+        className="absolute top-1/2 left-0 w-[400px] h-[400px] pointer-events-none -translate-y-1/2" 
+        style={{ background: 'radial-gradient(circle, rgba(0, 255, 65, 0.03) 0%, transparent 50%)' }} 
+      />
+      
+      <div className="container-custom relative z-10">
         {/* Header */}
         <div className="text-center mb-16">
           <p className="label mb-3">INSTITUTIONAL GRADE</p>
@@ -47,21 +53,29 @@ export default function Trust() {
           {complianceItems.map((item, index) => (
             <div 
               key={index}
-              className="compliance-box group"
+              className="compliance-box group relative overflow-hidden"
             >
-              <div className="compliance-icon mb-4 group-hover:bg-accent-green/20 transition-colors">
-                <item.icon className="w-6 h-6" />
+              {/* Subtle glow on hover */}
+              <div 
+                className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
+                style={{ background: 'radial-gradient(circle at center, rgba(0, 255, 65, 0.03) 0%, transparent 60%)' }}
+              />
+              
+              <div className="relative z-10">
+                <div className="compliance-icon mb-4 group-hover:bg-accent-green/20 transition-colors">
+                  <item.icon className="w-6 h-6" />
+                </div>
+                <h3 className="text-lg font-bold mb-2">{item.title}</h3>
+                <p className="text-bismuth-dark text-sm">
+                  {item.description}
+                </p>
               </div>
-              <h3 className="text-lg font-bold mb-2">{item.title}</h3>
-              <p className="text-bismuth-dark text-sm">
-                {item.description}
-              </p>
             </div>
           ))}
         </div>
 
         {/* Trust Badges */}
-        <div className="flex flex-wrap justify-center gap-8 mt-12 pt-8 border-t border-border-subtle">
+        <div className="flex flex-wrap justify-center gap-4 mt-12 pt-8 border-t border-border-subtle">
           {['SOC2', 'GDPR', 'EU AI Act', 'ISO 27001'].map((badge, index) => (
             <div 
               key={index}

@@ -16,7 +16,6 @@ const agentLogs = [
 ]
 
 export default function Hero() {
-  const [logs, setLogs] = useState<string[]>([])
   const [visibleCount, setVisibleCount] = useState(0)
 
   useEffect(() => {
@@ -30,8 +29,20 @@ export default function Hero() {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Grid Overlay */}
-      <div className="absolute inset-0 grid-overlay opacity-20" />
+      {/* Grid Overlay - very subtle */}
+      <div className="absolute inset-0 grid-overlay opacity-10" />
+      
+      {/* Green Glow - centered */}
+      <div 
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] pointer-events-none" 
+        style={{ background: 'radial-gradient(circle, rgba(0, 255, 65, 0.06) 0%, transparent 60%)' }} 
+      />
+
+      {/* Top corner subtle glow */}
+      <div 
+        className="absolute top-0 right-0 w-[300px] h-[300px] pointer-events-none" 
+        style={{ background: 'radial-gradient(circle, rgba(0, 255, 65, 0.03) 0%, transparent 50%)' }} 
+      />
 
       <div className="relative z-10 container-custom pt-16 pb-16 px-4">
         <div className="max-w-4xl mx-auto text-center">
@@ -41,8 +52,14 @@ export default function Hero() {
             <span className="text-bismuth">B2B Revenue</span>
           </h1>
 
-          {/* Terminal Window */}
-          <div className="terminal max-w-2xl mx-auto mb-10 mt-8">
+          {/* Terminal Window with glow effect */}
+          <div className="terminal max-w-2xl mx-auto mb-10 mt-8 relative">
+            {/* Subtle glow behind terminal */}
+            <div 
+              className="absolute -inset-2 rounded-xl pointer-events-none"
+              style={{ background: 'radial-gradient(circle, rgba(0, 255, 65, 0.1) 0%, transparent 60%)', filter: 'blur(10px)' }}
+            />
+            
             <div className="terminal-header">
               <div className="terminal-dot bg-red-500" />
               <div className="terminal-dot bg-yellow-500" />
@@ -72,17 +89,17 @@ export default function Hero() {
             <ChevronRight className="w-5 h-5 ml-2" />
           </Link>
 
-          {/* Stats */}
+          {/* Stats with subtle glow */}
           <div className="grid grid-cols-3 gap-6 mt-12 pt-8 border-t border-border-subtle max-w-lg mx-auto">
-            <div>
+            <div className="relative">
               <div className="text-2xl md:text-3xl font-bold text-accent-green">500+</div>
               <div className="text-xs text-bismuth-dark mt-1">Active Pods</div>
             </div>
-            <div>
+            <div className="relative">
               <div className="text-2xl md:text-3xl font-bold text-accent-green">$2.4B</div>
               <div className="text-xs text-bismuth-dark mt-1">Pipeline</div>
             </div>
-            <div>
+            <div className="relative">
               <div className="text-2xl md:text-3xl font-bold text-accent-green">98%</div>
               <div className="text-xs text-bismuth-dark mt-1">Show Rate</div>
             </div>

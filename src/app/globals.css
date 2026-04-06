@@ -52,6 +52,16 @@
                       linear-gradient(to bottom, #111 1px, transparent 1px);
   }
 
+  /* Subtle Green Glow */
+  .glow-green {
+    background: radial-gradient(circle at center, rgba(0, 255, 65, 0.08) 0%, transparent 60%);
+  }
+
+  /* Subtle Gradient Overlay */
+  .gradient-subtle {
+    background: linear-gradient(180deg, rgba(0, 255, 65, 0.02) 0%, transparent 50%);
+  }
+
   /* Glass Nav */
   .glass-nav {
     @apply bg-charcoal/80 backdrop-blur-xl border-b border-border-subtle;
@@ -63,7 +73,7 @@
   }
 
   .bento-card {
-    @apply bg-surface border border-border-subtle p-6 hover:border-bismuth/30 transition-all duration-300;
+    @apply bg-surface border border-border-subtle p-6 hover:border-accent-green/30 transition-all duration-500;
   }
 
   /* Terminal */
@@ -100,6 +110,11 @@
     @apply inline-flex items-center justify-center px-8 py-4 
            bg-accent-green text-jet font-bold rounded-lg uppercase tracking-wider
            hover:bg-accent-green/90 transition-all duration-300;
+    box-shadow: 0 0 20px rgba(0, 255, 65, 0.15);
+  }
+
+  .btn-primary:hover {
+    box-shadow: 0 0 30px rgba(0, 255, 65, 0.25);
   }
 
   /* Button Secondary */
